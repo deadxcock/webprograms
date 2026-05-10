@@ -1,0 +1,18 @@
+    <!DOCTYPE html>
+<html>
+
+<body style="background:black;margin:0">
+    <canvas id="c"></canvas>
+    <script>
+        c.width = innerWidth; c.height = innerHeight; x = Array(300).fill(0);
+        setInterval(() => {
+            a = c.getContext("2d"); a.fillStyle = "#0001"; a.fillRect(0, 0, c.width, c.height);
+            a.fillStyle = "#0f0"; x.map((y, i) => {
+                t = String.fromCharCode(12448 + Math.random() * 96);
+                a.fillText(t, i * 10, y); x[i] = y > 758 + Math.random() * 1e4 ? 0 : y + 10
+            });
+        }, 50);
+    </script>
+</body>
+
+</html>
